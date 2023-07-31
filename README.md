@@ -43,6 +43,10 @@ Mobile:
 - Created pseudocode to describe how will work
 - Created flowchart to show how the game will work
 - Created a basic HTML page (initially game will played within the browser developer console)
+- Broke the game down into smaller sections to code and then test each part as I went along:
+  - Coded initial value setup, get player input, check player input and redo get player input if not a correct option
+  - Coded random number (to be used for computer selection)
+  - Coded computer selection
 
 TODO
 

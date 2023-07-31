@@ -34,3 +34,16 @@ while (!checkSelection) {
   console.log(`Player selected: ${playerSelection}`);
   console.log(`Input selection correct: ${checkSelection}`);
 }
+
+function getComputerChoice(selections) {
+  let randomNumber = randomSelection();
+  console.log(`Random number generated for computer choice: ${randomNumber}`);
+  return selections[randomNumber];
+}
+
+function randomSelection() {
+  return Math.floor(Math.random() * 3);
+}
+
+computerSelection = getComputerChoice(selections);
+console.log(`Computer selected: ${computerSelection}`);
