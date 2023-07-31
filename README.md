@@ -19,8 +19,8 @@ This rock, paper, scissors game was part of [The Odin Project](https://www.theod
 
 The assignment was to create a basic rock, paper, scissors game using JavaScript. The main focus was to plan and break down the project into smaller pieces before coding and testing each piece.
 
-- [Plan](TODO)
-- [Pseudocode](TODO)
+- [Plan](Plan.md)
+- [Pseudocode](Pseudocode.md)
 
 ## Rock Paper Scissors Game
 
@@ -39,30 +39,25 @@ Mobile:
 
 ## Process
 
+- Created the basic plan for the game - rules, interface, inputs, outputs
+- Created pseudocode to describe how will work
+- Created flowchart to show how the game will work
+- Created a basic HTML page (initially game will played within the browser developer console)
+
 TODO
 
-- Created the basic HTML structure of the landing page.
-- Created the basic CSS for typography, font sizing and colours.
-- Created the CSS layout using flex to match as closely as possible to the design.
-- Created a toggle button to switch between two different theme colours (original dark and then a pink themed colour).
-- Refactored the CSS to make DRY.
-- Added media queries to CSS to create a responsive web design for smaller devices.
-- Edited :focus to match styling for keyboard only users.
+- Refactored the JavaScript to make DRY.
 
 ### Built with
 
-TODO
-
 - HTML5
-- CSS3
-  - Flexbox
-  - Custom properties
-- Desktop first responsive layout
+- JavaScript
+
+TODO
 
 ### What I learned
 
 TODO
-I learnt how to create and switch between two different colour themes.
 
 ### Continued development
 
@@ -71,9 +66,6 @@ TODO
 ### Useful resources
 
 TODO
-
-- [Tint & Shade Generator](https://maketintsandshades.com/) - Free tool that calculates tints and shades for your default colour, to enable you to create a cohesive colour scheme.
-- [Coolers Colour Contrast Checker](https://coolors.co/contrast-checker/112a46-acc8e5) - Free tool that allows you to check the colour contrast of the text to background colour for accessibility / readability purposes.
 
 ## Author
 
