@@ -25,19 +25,19 @@ playerSelection = getPlayerChoice();
 let checkSelection = checkPlayerChoice(playerSelection, selections);
 
 console.log(`Player selected: ${playerSelection}`);
-console.log(`Input selection correct: ${checkSelection}`);
+// console.log(`Input selection correct: ${checkSelection}`);
 
 while (!checkSelection) {
   console.log("Incorrect selection, please re-enter your choice...");
   playerSelection = getPlayerChoice();
   checkSelection = checkPlayerChoice(playerSelection, selections);
   console.log(`Player selected: ${playerSelection}`);
-  console.log(`Input selection correct: ${checkSelection}`);
+  // console.log(`Input selection correct: ${checkSelection}`);
 }
 
 function getComputerChoice(selections) {
   let randomNumber = randomSelection();
-  console.log(`Random number generated for computer choice: ${randomNumber}`);
+  // console.log(`Random number generated for computer choice: ${randomNumber}`);
   return selections[randomNumber];
 }
 
@@ -47,3 +47,33 @@ function randomSelection() {
 
 computerSelection = getComputerChoice(selections);
 console.log(`Computer selected: ${computerSelection}`);
+
+function compareChoices(playerSelection, computerSelection) {
+  if (playerSelection === computerSelection)
+    console.log(
+      `It's a draw. Player selected '${playerSelection}' and computer selected '${computerSelection}'.`
+    );
+  else if (
+    (playerSelection === "Rock" && computerSelection === "Scissors") ||
+    (playerSelection === "Scissors" && computerSelection === "Paper") ||
+    (playerSelection === "Paper" && computerSelection === "Rock")
+  ) {
+    console.log(
+      `You won this round. Player selected '${playerSelection}' beats '${computerSelection}' selected by the computer.`
+    );
+    return "Player";
+  } else {
+    console.log(
+      `You lost this round. Player selected '${playerSelection}' which doesn't beat '${computerSelection}' selected by the computer.`
+    );
+    return "Computer";
+  }
+}
+
+let winner = compareChoices(playerSelection, computerSelection);
+
+winner === "Player" ? playerScore++ : computerScore++;
+
+console.log(`Current scores are:
+  Player: ${playerScore}
+  Computer: ${computerScore}`);

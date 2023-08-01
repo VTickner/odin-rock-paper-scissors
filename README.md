@@ -47,6 +47,7 @@ Mobile:
   - Coded initial value setup, get player input, check player input and redo get player input if not a correct option
   - Coded random number (to be used for computer selection)
   - Coded computer selection
+  - Coded a comparison to work out who won that round and added a point to the winner's score
 
 TODO
 
