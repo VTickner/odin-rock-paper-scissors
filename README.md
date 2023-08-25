@@ -21,6 +21,7 @@ The assignment was to create a basic rock, paper, scissors game using JavaScript
 
 - [Plan](Plan.md)
 - [Pseudocode](Pseudocode.md)
+- [Flow chart](Flowchart-rock-paper-scissors.jpg)
 
 ## Rock Paper Scissors Game
 
@@ -28,9 +29,6 @@ The assignment was to create a basic rock, paper, scissors game using JavaScript
 
 Desktop:  
 ![Desktop screenshot](./img/desktop-screenshot.jpg) TODO
-
-Mobile:  
-![Mobile screenshot](./img/mobile-screenshot.jpg) TODO
 
 ### Links
 
@@ -44,21 +42,19 @@ Mobile:
 - Created flowchart to show how the game will work
 - Created a basic HTML page (initially game will played within the browser developer console)
 - Broke the game down into smaller sections to code and then test each part as I went along:
-  - Coded initial value setup, get player input, check player input and redo get player input if not a correct option
-  - Coded random number (to be used for computer selection)
-  - Coded computer selection
-  - Coded a comparison to work out who won that round and added a point to the winner's score
-
-TODO
-
+  - Initial value setup, get player input, check player input and redo get player input if not a correct option
+  - Generate random number (to be used for computer selection)
+  - Get computer selection
+  - Compare who won that round and add a point to the winner's score
+  - Play further rounds until either the player or computer scores = 5
+  - Output overall winner of the game with scores.
 - Refactored the JavaScript to make DRY.
+  TODO
 
 ### Built with
 
 - HTML5
 - JavaScript
-
-TODO
 
 ### What I learned
 
@@ -70,7 +66,8 @@ TODO
 
 ### Useful resources
 
-TODO
+- [https://app.diagrams.net/](Draw.io) - Free online diagram software for making flowcharts, process diagrams, etc.
+  TODO
 
 ## Author
 

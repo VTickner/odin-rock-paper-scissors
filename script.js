@@ -2,9 +2,35 @@
 
 let playerScore = 0;
 let computerScore = 0;
+let validSelection = false;
 let playerSelection;
 let computerSelection;
+let winner;
 const selections = ["Rock", "Paper", "Scissors"];
+
+function game() {
+  do {
+    playerTurn();
+    while (!validSelection) {
+      console.log("Incorrect selection, please re-enter your choice...");
+      playerTurn();
+    }
+
+    computerTurn();
+
+    winner = playRound(playerSelection, computerSelection);
+    setScores(winner);
+    printCurrentScores(playerScore, computerScore);
+  } while (playerScore < 5 && computerScore < 5);
+
+  printWinner(playerScore, computerScore);
+}
+
+function playerTurn() {
+  playerSelection = getPlayerChoice();
+  validSelection = checkPlayerChoice(playerSelection, selections);
+  printSelection("Player");
+}
 
 function getPlayerChoice() {
   let playerChoice = prompt("Please select: rock, paper or scissors");
@@ -21,59 +47,61 @@ function checkPlayerChoice(playerChoice, selections) {
     : false;
 }
 
-playerSelection = getPlayerChoice();
-let checkSelection = checkPlayerChoice(playerSelection, selections);
+function printSelection(user) {
+  if (user === "Player") console.log(`${user} selected: ${playerSelection}`);
+  else if (user === "Computer")
+    console.log(`${user} selected: ${computerSelection}`);
+}
 
-console.log(`Player selected: ${playerSelection}`);
-// console.log(`Input selection correct: ${checkSelection}`);
-
-while (!checkSelection) {
-  console.log("Incorrect selection, please re-enter your choice...");
-  playerSelection = getPlayerChoice();
-  checkSelection = checkPlayerChoice(playerSelection, selections);
-  console.log(`Player selected: ${playerSelection}`);
-  // console.log(`Input selection correct: ${checkSelection}`);
+function computerTurn() {
+  computerSelection = getComputerChoice(selections);
+  printSelection("Computer");
 }
 
 function getComputerChoice(selections) {
-  let randomNumber = randomSelection();
-  // console.log(`Random number generated for computer choice: ${randomNumber}`);
-  return selections[randomNumber];
+  return selections[randomSelection()];
 }
 
 function randomSelection() {
   return Math.floor(Math.random() * 3);
 }
 
-computerSelection = getComputerChoice(selections);
-console.log(`Computer selected: ${computerSelection}`);
-
-function compareChoices(playerSelection, computerSelection) {
-  if (playerSelection === computerSelection)
-    console.log(
-      `It's a draw. Player selected '${playerSelection}' and computer selected '${computerSelection}'.`
-    );
-  else if (
+function playRound(playerSelection, computerSelection) {
+  if (playerSelection === computerSelection) {
+    console.log(`It's a draw. ${playerSelection} = ${computerSelection}!`);
+    return;
+  } else if (
     (playerSelection === "Rock" && computerSelection === "Scissors") ||
     (playerSelection === "Scissors" && computerSelection === "Paper") ||
     (playerSelection === "Paper" && computerSelection === "Rock")
   ) {
     console.log(
-      `You won this round. Player selected '${playerSelection}' beats '${computerSelection}' selected by the computer.`
+      `You won this round. ${playerSelection} beats ${computerSelection}!`
     );
     return "Player";
   } else {
     console.log(
-      `You lost this round. Player selected '${playerSelection}' which doesn't beat '${computerSelection}' selected by the computer.`
+      `You lost this round. ${playerSelection} doesn't beat ${computerSelection}.`
     );
     return "Computer";
   }
 }
 
-let winner = compareChoices(playerSelection, computerSelection);
+function setScores(winner) {
+  if (winner === "Player") playerScore++;
+  else if (winner === "Computer") computerScore++;
+}
 
-winner === "Player" ? playerScore++ : computerScore++;
+function printCurrentScores(playerScore, computerScore) {
+  console.log(
+    `Current scores are Player: ${playerScore}, Computer: ${computerScore}`
+  );
+}
 
-console.log(`Current scores are:
-  Player: ${playerScore}
-  Computer: ${computerScore}`);
+function printWinner(playerScore, computerScore) {
+  playerScore === 5
+    ? console.log(`You won the game! ${playerScore}:${computerScore}`)
+    : console.log(`You lost the game! ${playerScore}:${computerScore}`);
+}
+
+game();

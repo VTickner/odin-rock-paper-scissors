@@ -18,15 +18,17 @@ Both player and computer can choose 1 of the following 3 options:
 
 - Initialise playerScore = 0
 - Initialise computerScore = 0
+- Initialise validSelection = false
 - Declare playerSelection with no initial value
 - Declare computerSelection with no initial value
+- Declare winner with no initial value
 - Create array of selections = ['Rock', 'Paper', 'Scissors']
 
 ## Play game
 
 Play the game until either the player or computer reaches a score of 5 i.e. first one to a score of 5 wins.
 
-while (playerScore < 5 || computerScore < 5) {
+do {
 
 - Get input playerSelection from player using prompt
 - Set playerSelection.toLowerCase() and set first letter of playerSelection.toUpperCase() to match string format of selection options in array
@@ -42,13 +44,13 @@ while (playerScore < 5 || computerScore < 5) {
 
 - Output playerSelection and computerSelection
 - Output playerScore and computerScore
-- Output "You won! playerSelection beats computerSelection" or "You lost! computerSelection beats playerSelection" depending upon who won the game round
+- Output "You won! playerSelection beats computerSelection" or "You lost! computerSelection beats playerSelection" depending upon who won the game round, or output "It's a draw! playerSelection = computerSelection!
 
-}
+} while (playerScore < 5 && computerScore < 5)
 
 Output overall winner at the end of the game
 
-- (playerScore === 5) ? "You won! 5 games to computerScore" : "You lost! 5 games to playerScore"
+- (playerScore === 5) ? "You won! 5 : computerScore" : "You lost! 5 games to playerScore"
 
 ## Reset game?
 
@@ -60,4 +62,4 @@ Output overall winner at the end of the game
 ## resetGame()
 
 - Set initial values back to initial set up of the game
-- Call play game function to play the game again
+- Call game function to play the game again

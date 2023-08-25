@@ -27,3 +27,4 @@ Player to play rock, paper, scissors game against a computer opponent.
 - Output whether player won or lost round.
 - Output player and computer scores.
 - At end of game output whether player won or lost overall.
+- Input via prompt required from player, to find out whether they want to play another game.
