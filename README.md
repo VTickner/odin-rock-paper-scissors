@@ -97,7 +97,7 @@ Future improvements to the game:
 
 ### Useful resources
 
-- [https://app.diagrams.net/](Draw.io) - Free online diagram software for making flowcharts, process diagrams, etc.
+- [Draw.io](https://app.diagrams.net/) - Free online diagram software for making flowcharts, process diagrams, etc.
 
 ## Author
 
