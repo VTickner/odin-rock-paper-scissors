@@ -1,4 +1,4 @@
-# PSEUDOCODE - ODIN ROCK, PAPER, SCISSORS GAME
+# Pseudocode - Odin Rock, Paper, Scissors Game
 
 ## Game rules
 
@@ -54,12 +54,8 @@ Output overall winner at the end of the game
 
 ## Reset game?
 
+- Re-initialise variables
 - Output "Do you want to play again?"
 - Get input reset answer from player using prompt
 - Set reset.toLowerCase() to match string format of 'yes'
-- reset === 'yes' ? resetGame() : "Goodbye"
-
-## resetGame()
-
-- Set initial values back to initial set up of the game
-- Call game function to play the game again
+- reset === 'yes' ? game() : "Goodbye, thanks for playing!"

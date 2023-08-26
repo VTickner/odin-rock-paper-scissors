@@ -1,12 +1,12 @@
 "use strict";
 
+const selections = ["Rock", "Paper", "Scissors"];
 let playerScore = 0;
 let computerScore = 0;
 let validSelection = false;
 let playerSelection;
 let computerSelection;
 let winner;
-const selections = ["Rock", "Paper", "Scissors"];
 
 function game() {
   do {
@@ -24,6 +24,8 @@ function game() {
   } while (playerScore < 5 && computerScore < 5);
 
   printWinner(playerScore, computerScore);
+
+  resetGame();
 }
 
 function playerTurn() {
@@ -102,6 +104,18 @@ function printWinner(playerScore, computerScore) {
   playerScore === 5
     ? console.log(`You won the game! ${playerScore}:${computerScore}`)
     : console.log(`You lost the game! ${playerScore}:${computerScore}`);
+}
+
+function resetGame() {
+  playerScore = 0;
+  computerScore = 0;
+  validSelection = false;
+  playerSelection = null;
+  computerSelection = null;
+  winner = null;
+  prompt("Do you want to play again? (yes/no)").toLowerCase() === "yes"
+    ? game()
+    : console.log("Goodbye, thanks for playing!");
 }
 
 game();

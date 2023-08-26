@@ -1,4 +1,4 @@
-# PLAN - ODIN ROCK, PAPER, SCISSORS GAME
+# Plan - Odin Rock, Paper, Scissors Game
 
 ## Game Overview
 
